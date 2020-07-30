@@ -8583,6 +8583,32 @@ func NewMDEntryID(val string) MDEntryIDField {
 
 func (f MDEntryIDField) Value() string { return f.String() }
 
+//TenorField is a STRING field
+type TenorField struct{ quickfix.FIXString }
+
+//Tag returns tag.Tenor (9002)
+func (f TenorField) Tag() quickfix.Tag { return tag.Tenor }
+
+//NewTenor returns a new TenorField initialized with val
+func NewTenor(val string) TenorField {
+	return TenorField{quickfix.FIXString(val)}
+}
+
+func (f TenorField) Value() string { return f.String() }
+
+//OutrightAllInRateField is a STRING field
+type OutrightAllInRateField struct{ quickfix.FIXString }
+
+//Tag returns tag.OutrightAllInRate (9002)
+func (f OutrightAllInRateField) Tag() quickfix.Tag { return tag.OutrightAllInRate }
+
+//NewOutrightAllInRate returns a new OutrightAllInRateField initialized with val
+func NewOutrightAllInRate(val string) OutrightAllInRateField {
+	return OutrightAllInRateField{quickfix.FIXString(val)}
+}
+
+func (f OutrightAllInRateField) Value() string { return f.String() }
+
 //ValueDateField is a STRING field
 type ValueDateField struct{ quickfix.FIXString }
 
