@@ -8622,6 +8622,58 @@ func NewValueDate(val string) ValueDateField {
 
 func (f ValueDateField) Value() string { return f.String() }
 
+//MarketMidRateField is a STRING field
+type MarketMidRateField struct{ quickfix.FIXString }
+
+//Tag returns tag.MarketMidRate (9050)
+func (f MarketMidRateField) Tag() quickfix.Tag { return tag.MarketMidRate }
+
+//NewMarketMidRate returns a new MarketMidRateField initialized with val
+func NewMarketMidRate(val string) MarketMidRateField {
+	return MarketMidRateField{quickfix.FIXString(val)}
+}
+
+func (f MarketMidRateField) Value() string { return f.String() }
+
+//FixingDateField is a STRING field
+type FixingDateField struct{ quickfix.FIXString }
+
+//Tag returns tag.FixingDate (6203)
+func (f FixingDateField) Tag() quickfix.Tag { return tag.FixingDate }
+
+//NewFixingDate returns a new FixingDateField initialized with val
+func NewFixingDate(val string) FixingDateField {
+	return FixingDateField{quickfix.FIXString(val)}
+}
+
+func (f FixingDateField) Value() string { return f.String() }
+
+//FixingSourceField is a STRING field
+type FixingSourceField struct{ quickfix.FIXString }
+
+//Tag returns tag.FixingSource (6204)
+func (f FixingSourceField) Tag() quickfix.Tag { return tag.FixingSource }
+
+//NewFixingSource returns a new FixingSourceField initialized with val
+func NewFixingSource(val string) FixingSourceField {
+	return FixingSourceField{quickfix.FIXString(val)}
+}
+
+func (f FixingSourceField) Value() string { return f.String() }
+
+//PipPlacementField is a STRING field
+type PipPlacementField struct{ quickfix.FIXString }
+
+//Tag returns tag.PipPlacement (9003)
+func (f PipPlacementField) Tag() quickfix.Tag { return tag.PipPlacement }
+
+//NewPipPlacement returns a new PipPlacementField initialized with val
+func NewPipPlacement(val string) PipPlacementField {
+	return PipPlacementField{quickfix.FIXString(val)}
+}
+
+func (f PipPlacementField) Value() string { return f.String() }
+
 //MDEntryOriginatorField is a STRING field
 type MDEntryOriginatorField struct{ quickfix.FIXString }
 
