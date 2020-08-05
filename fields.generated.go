@@ -22,6 +22,19 @@ func NewAccount(val string) AccountField {
 
 func (f AccountField) Value() string { return f.String() }
 
+//AccountIDField is a STRING field
+type AccountIDField struct{ quickfix.FIXString }
+
+//Tag returns tag.AccountID (9004)
+func (f AccountIDField) Tag() quickfix.Tag { return tag.AccountID }
+
+//NewAccountID returns a new AccountIDField initialized with val
+func NewAccountID(val string) AccountIDField {
+	return AccountIDField{quickfix.FIXString(val)}
+}
+
+func (f AccountIDField) Value() string { return f.String() }
+
 //AccountTypeField is a enum.AccountType field
 type AccountTypeField struct{ quickfix.FIXString }
 
